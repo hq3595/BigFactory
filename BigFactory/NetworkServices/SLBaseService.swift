@@ -42,7 +42,7 @@ class SLBaseService: NSObject {
             let resultMD = response.result.value
             //网络请求失败
             if(resultMD?.resultCode != .Success){
-                log.debug("error response:\(response)")
+                log.info("error response:\(response.response) ----> :\(response.result)")
             }
         }
         return request

@@ -24,7 +24,6 @@ class SLMainViewController: SLRefreshTableViewController,SLPostCellDelegate {
         titleImgView.contentMode = UIViewContentMode.ScaleAspectFit
         titleImgView.image = titleImage
         self.navigationItem.titleView = titleImgView
-//        self.titleLabel.text = "大笑工厂"
         self.showTable.registerClass(SLPostCell.self, forCellReuseIdentifier: PostCellIdentify)
         firstRefreshData()
     }

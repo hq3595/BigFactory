@@ -13,8 +13,7 @@ import Gifu
 class SLRefreshTableViewController: SLTableViewController {
     
     private var loaddingMoreView:SLLoaddingMoreView!
-//    private var activityView:UIActivityIndicatorView!
-    private var loaddingGif = AnimatableImageView()
+    private var activityView:UIActivityIndicatorView!
     private var refreshHeaderView = SLRefreshHeaderView(frame: CGRectMake(0, 0, 320, 60))
     private var tableViewLastPosition:CGFloat = 0
     
@@ -59,19 +58,12 @@ class SLRefreshTableViewController: SLTableViewController {
         self.canPullToRefreshData = true  //默认为true,可以在子类里面设置
         self.canDrageToLoadMoreData = true //默认为true, 可以在子类里面设置
         
-//        self.activityView = UIActivityIndicatorView.init(activityIndicatorStyle: .Gray)
-//        self.activityView.frame = CGRectMake(0, 0, 24, 24)
-//        self.activityView.backgroundColor = UIColor.clearColor()
-//        self.activityView.center = self.showTable.center
-//        self.activityView.hidesWhenStopped = true
-//        self.view.insertSubview(self.activityView, aboveSubview: self.showTable)
-        
-        self.loaddingGif = AnimatableImageView(frame: CGRectMake(0, 0, 63, 42))
-        self.loaddingGif.center = self.showTable.center
-        self.loaddingGif.animateWithImage(named: "refresh_loadding.gif")
-        self.loaddingGif.hidden = true
-        self.view.insertSubview(self.loaddingGif, aboveSubview: self.showTable)
-        
+        self.activityView = UIActivityIndicatorView.init(activityIndicatorStyle: .Gray)
+        self.activityView.frame = CGRectMake(0, 0, 24, 24)
+        self.activityView.backgroundColor = UIColor.clearColor()
+        self.activityView.center = self.showTable.center
+        self.activityView.hidesWhenStopped = true
+        self.view.insertSubview(self.activityView, aboveSubview: self.showTable)
         self.showTable.addSubview(self.placeHolderView)
     }
     
@@ -83,9 +75,7 @@ class SLRefreshTableViewController: SLTableViewController {
             return
         }
         if(self.dataSource.count == 0){
-//            self.activityView.startAnimating()
-            self.loaddingGif.hidden = false;
-            self.loaddingGif.startAnimatingGIF()
+            self.activityView.startAnimating()
         }
         self.hasNoDataToGet = false
         self.isRefreshing = true
@@ -94,9 +84,7 @@ class SLRefreshTableViewController: SLTableViewController {
     }
     
     func firstRefreshDataSuccess(result:SLAPIResult){
-//        self.activityView.stopAnimating()
-        self.loaddingGif.hidden = true;
-        self.loaddingGif.stopAnimatingGIF()
+        self.activityView.stopAnimating()
         self.isRefreshing = false
         if(self.dataSource.count > 0){
             self.dataSource.removeAllObjects()
@@ -113,9 +101,7 @@ class SLRefreshTableViewController: SLTableViewController {
     }
     
     func firstRefreshDataFailed(result:SLAPIResult){
-//        self.activityView.stopAnimating()
-        self.loaddingGif.hidden = true
-        self.loaddingGif.stopAnimatingGIF()
+        self.activityView.stopAnimating()
         self.isRefreshing = false
         if(self.dataSource.count == 0){
             self.placeHolderView.hidden = false
