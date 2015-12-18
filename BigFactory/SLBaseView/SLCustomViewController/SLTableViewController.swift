@@ -48,7 +48,7 @@ class SLTableViewController: SLViewController,UITableViewDataSource,UITableViewD
         if(cell == nil){
             cell = SLTableViewCell.init(style: .Default, reuseIdentifier: cellIdentifier)
         }
-        cell!.textLabel?.text = "#蝌蚪音客"
+        cell!.textLabel?.text = "#蝌蚪音客出品#"
         return cell!
     }
     
