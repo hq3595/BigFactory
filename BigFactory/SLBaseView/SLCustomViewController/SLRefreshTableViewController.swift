@@ -77,6 +77,7 @@ class SLRefreshTableViewController: SLTableViewController {
         if(self.dataSource.count == 0){
             self.activityView.startAnimating()
         }
+        self.showTable.tableFooterView = nil;
         self.hasNoDataToGet = false
         self.isRefreshing = true
         self.isFirstRefreshData = true
@@ -171,7 +172,6 @@ class SLRefreshTableViewController: SLTableViewController {
             let  currentPostion = scrollView.contentOffset.y;
             var isScrollUp = false
             if (currentPostion - self.tableViewLastPosition > 20  && currentPostion > 0) {
-                self.tableViewLastPosition = currentPostion;
                 isScrollUp = true
             }else{
                 isScrollUp = false
@@ -183,6 +183,7 @@ class SLRefreshTableViewController: SLTableViewController {
                 log.info("GET MORE DATA");
                 loadMoreData()
             }
+            self.tableViewLastPosition = currentPostion;
         }
     }
     
