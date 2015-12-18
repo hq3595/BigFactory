@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (3.1.3)
+  - AlamofireObjectMapper (2.1.0):
+    - Alamofire (~> 3.1.0)
+    - ObjectMapper (~> 1.0)
+  - Gifu (1.0.0)
+  - Kingfisher (1.8.3)
+  - ObjectMapper (1.0.1)
+  - ReachabilitySwift (2.3.3)
+  - Refresher (0.5.0)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - AlamofireObjectMapper
+  - Gifu
+  - Kingfisher (~> 1.8)
+  - ReachabilitySwift
+  - Refresher
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  AlamofireObjectMapper: 24097576202064f8b0a583452dd934064f78dc0e
+  Gifu: dcb0d05caa83be1f7e51bdb033318f64a93527b0
+  Kingfisher: ead91e9dbeb7e5a2e8b7af3bd8a294104cbcc3f9
+  ObjectMapper: 98524bac0dca46c6b3d5ee02cd410fc700ec6ce2
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  Refresher: 485f5990e6315add7f3470db5a4ca106451b11d3
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
